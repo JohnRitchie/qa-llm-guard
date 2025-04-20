@@ -12,6 +12,7 @@ def load_cache():
             return json.load(f)
     return {}
 
+
 def save_cache(data):
     """
     Saves a dictionary of prompt → response to disk as JSON.
