@@ -1,0 +1,4 @@
+openai
+deepeval
+pytest
+allure-pytest
