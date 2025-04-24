@@ -1,5 +1,5 @@
 from deepeval import evaluate
-from deepeval.metrics import AnswerRelevancyMetric
+from llm_guard.metrics.local_embedding import LocalEmbeddingSimilarityMetric
 from llm_guard.models.openai_model import get_llm_response
 from llm_guard.loader import load_all_test_cases
 from llm_guard.cache import load_cache, save_cache
@@ -25,5 +25,5 @@ def run_tests(use_cache=False, update_cache=False):
     if update_cache:
         save_cache(cache)
 
-    metric = AnswerRelevancyMetric(threshold=0.8)
+    metric = LocalEmbeddingSimilarityMetric(threshold=0.8)
     evaluate(test_cases, [metric])

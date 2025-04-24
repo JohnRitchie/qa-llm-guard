@@ -6,3 +6,5 @@ dotenv
 transformers
 torch
 hf_xet
+sentence-transformers
+numpy
