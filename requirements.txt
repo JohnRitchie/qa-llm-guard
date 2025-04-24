@@ -3,3 +3,6 @@ deepeval
 pytest
 allure-pytest
 dotenv
+transformers
+torch
+hf_xet
