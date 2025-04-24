@@ -15,6 +15,7 @@ def get_llm_response(prompt: str) -> str:
     if api_key:
         client = OpenAI(api_key=api_key)
         model_name = os.getenv("OPENAI_MODEL", "gpt-3.5-turbo")
+        print(f'Using {model_name}')
         response = client.chat.completions.create(
             model=model_name,
             messages=[{"role": "user", "content": prompt}],
@@ -23,5 +24,8 @@ def get_llm_response(prompt: str) -> str:
         return response.choices[0].message.content.strip()
     else:
         # local model Hugging Face
-        gen = pipeline("text-generation", model=os.getenv("FALLBACK_MODEL"))
-        return gen(prompt, max_length=100)[0]["generated_text"]
+        model_name = os.getenv("FALLBACK_MODEL", "distilgpt2")
+        print(f'Using {model_name}')
+        generator = pipeline("text-generation", model=model_name)
+        result = generator(prompt, max_length=100)
+        return result[0]["generated_text"]

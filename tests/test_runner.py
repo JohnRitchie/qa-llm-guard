@@ -7,4 +7,4 @@ def test_llm_responses_pass_with_cache():
     """
     Smoke test: runs all LLM test cases using the cache.
     """
-    run_tests(use_cache=True, update_cache=True)
+    run_tests(use_cache=False, update_cache=False)
