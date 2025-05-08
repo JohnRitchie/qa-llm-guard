@@ -3,12 +3,11 @@ from deepeval.test_case import LLMTestCase
 
 test_cases = [
     LLMTestCase(
-        input="What is the capital of France?",
-        expected_output="Paris",
+        input="What is the capital of Ireland?",
+        expected_output="Dublin",
         actual_output="",
         context=[
-            "You are a concise assistant. "
-            "Answer with exactly one word."
+            "Imagine you're like wikipedia. I ask you a simple fact and you give me a succinct one-word answer"
         ]
     ),
     LLMTestCase(
@@ -16,8 +15,7 @@ test_cases = [
         expected_output="Berlin",
         actual_output="",
         context=[
-            "You are a concise assistant. "
-            "Answer with exactly one word."
+            "Imagine you're like wikipedia. I ask you a simple fact and you give me a succinct one-word answer"
         ]
     )
 ]
