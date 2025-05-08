@@ -40,20 +40,14 @@ def get_llm_response(test_case: LLMTestCase) -> str:
 
     else:
         # local model Hugging Face
-        model_name = os.getenv("FALLBACK_MODEL", "distilgpt2")
+        model_name = os.getenv("FALLBACK_MODEL", "google/flan-t5-small")
         print(f'Using {model_name}')
         generator = pipeline(
-            "text-generation",
+            "text2text-generation",
             model=model_name,
             do_sample=False,
             temperature=0.0,
         )
         full_prompt = f"{system}\n\nQuestion: {user_prompt}\nAnswer:"
-        out = generator(full_prompt, max_new_tokens=16)
-        text = out[0]["generated_text"]
-        reply = text[len(full_prompt):].strip()
-        # return only the first non-empty line
-        for line in reply.splitlines():
-            if line.strip():
-                return line.strip()
-        return reply
+        out = generator(full_prompt, max_length=20)
+        return out[0]["generated_text"].strip()
