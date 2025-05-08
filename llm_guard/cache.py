@@ -1,7 +1,9 @@
 import os
 import json
 
+
 CACHE_FILE = "llm_guard/cache.json"
+
 
 def load_cache():
     """

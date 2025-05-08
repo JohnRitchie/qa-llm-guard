@@ -1,6 +1,7 @@
 import argparse
 from llm_guard.runner import run_tests
 
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run LLM test cases.")
     parser.add_argument("--cached", action="store_true", help="Use cached LLM responses")

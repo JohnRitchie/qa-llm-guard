@@ -1,5 +1,6 @@
 from deepeval.test_case import LLMTestCase
 
+
 test_cases = [
     LLMTestCase(
         input="What is the capital of France?",
