@@ -18,7 +18,7 @@ def run_tests(use_cache=False, update_cache=False):
         if use_cache and cache_key in cache:
             test_case.actual_output = cache[cache_key]
         else:
-            response = get_llm_response(test_case.input)
+            response = get_llm_response(test_case)
             test_case.actual_output = response
             if update_cache:
                 cache[cache_key] = response
