@@ -2,6 +2,15 @@
 
 Automated testing framework for Large Language Models (LLMs), using [DeepEval](https://github.com/confident-ai/deepeval).
 
+## 📑 Table of Contents
+
+- [🚀 Overview](#overview)
+- [🌟 Features](#features)
+- [🛠️ Installation](#installation)
+- [🏗️ Running tests](#running-tests)
+- [📚 Directory Structure](#directory-structure)
+- [📜 License](#license)
+
 ## Overview
 
 This project helps you:
