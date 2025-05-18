@@ -62,7 +62,6 @@ qa-llm-guard/
 ├── llm_guard/              # Core logic
 │   ├── loader.py
 │   ├── cache.py
-│   ├── runner.py
 │   ├── models/
 │   │   └── openai_model.py
 │   └── metrics/
