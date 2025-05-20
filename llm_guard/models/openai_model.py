@@ -35,7 +35,7 @@ def get_llm_response(test_case: LLMTestCase) -> str:
             model=model_name,
             messages=messages,
             temperature=0.0,
-            max_tokens=16,
+            max_tokens=1000,
         )
         return response.choices[0].message.content.strip()
 
