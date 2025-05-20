@@ -23,7 +23,8 @@ def get_llm_response(test_case: LLMTestCase) -> str:
     api_key = os.getenv("OPENAI_API_KEY")
 
     if api_key:
-        client = OpenAI(api_key=api_key)
+        base_url = os.getenv("BASE_URL")
+        client = OpenAI(api_key=api_key, base_url=base_url)
         model_name = os.getenv("OPENAI_MODEL", "gpt-3.5-turbo")
         print(f'Using {model_name}')
         messages = [
